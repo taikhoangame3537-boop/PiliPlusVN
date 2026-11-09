@@ -22,15 +22,18 @@ jobs:
 
       - name: Install Flutter dependencies
         run: flutter pub get
+        working-directory: ./tên-thư-mục-con   # <--- Thêm dòng này nếu code nằm trong thư mục con
 
       - name: Install CocoaPods
         run: |
           cd ios
           pod install
+        working-directory: ./tên-thư-mục-con   # <--- Thêm dòng này
 
       - name: Build iOS Release (No Codesign)
         run: |
           flutter build ios --release --no-codesign
+        working-directory: ./tên-thư-mục-con   # <--- Thêm dòng này
 
       - name: Archive built app
         run: |
@@ -39,9 +42,10 @@ jobs:
           mv Runner.app Payload/
           zip -r ../../../ios-app-release.zip Payload
           cd ../../..
+        working-directory: ./tên-thư-mục-con   # <--- Thêm dòng này
 
       - name: Upload iOS Artifact
         uses: actions/upload-artifact@v4
         with:
           name: ios-release-artifact
-          path: ios-app-release.zip
+          path: tên-thư-mục-con/build/ios/iphoneos/ios-app-release.zip # Trỏ đúng đường dẫn file zip nén
