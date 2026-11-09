@@ -1,0 +1,47 @@
+name: Build iOS Flutter App
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-ios:
+    name: Build iOS on macOS
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.27.1'
+          channel: 'stable'
+          cache: true
+
+      - name: Install Flutter dependencies
+        run: flutter pub get
+
+      - name: Install CocoaPods
+        run: |
+          cd ios
+          pod install
+
+      - name: Build iOS Release (No Codesign)
+        run: |
+          flutter build ios --release --no-codesign
+
+      - name: Archive built app
+        run: |
+          cd build/ios/iphoneos
+          mkdir Payload
+          mv Runner.app Payload/
+          zip -r ../../../ios-app-release.zip Payload
+          cd ../../..
+
+      - name: Upload iOS Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-release-artifact
+          path: ios-app-release.zip
