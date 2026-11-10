@@ -611,6 +611,9 @@ abstract final class Pref {
   static bool get enableDragSubtitle =>
       _setting.get(SettingBoxKey.enableDragSubtitle, defaultValue: false);
 
+  static bool get subtitleFreeAi =>
+      _setting.get(SettingBoxKey.subtitleFreeAi, defaultValue: false);
+
   static String get subtitleRules =>
       _setting.get(SettingBoxKey.subtitleRules, defaultValue: '');
 

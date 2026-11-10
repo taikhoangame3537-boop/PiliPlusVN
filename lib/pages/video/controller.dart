@@ -1132,7 +1132,12 @@ class VideoDetailController extends GetxController
           if (isClosed) return;
           vi = (isData: true, id: text);
           viSubtitles[index - 1] = vi;
-          SmartDialog.showToast('Đã dịch xong phụ đề');
+          final warn = SubtitleTranslator.lastWarning;
+          SmartDialog.showToast(
+            warn == null
+                ? 'Đã dịch xong phụ đề'
+                : 'Đã dịch xong, nhưng AI miễn phí lỗi ở một số đoạn nên dùng Google: $warn',
+          );
         } catch (e) {
           SmartDialog.showToast('Dịch phụ đề thất bại: $e');
         }

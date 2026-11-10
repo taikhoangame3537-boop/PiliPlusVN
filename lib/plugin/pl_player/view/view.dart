@@ -732,6 +732,27 @@ class _PLVideoPlayerState extends State<PLVideoPlayer>
                     ),
                   ),
                   PopupMenuItem<int>(
+                    value: -13,
+                    height: 35,
+                    onTap: () {
+                      GStorage.setting.put(
+                        SettingBoxKey.subtitleFreeAi,
+                        !Pref.subtitleFreeAi,
+                      );
+                      videoDetailController.viSubtitles.clear();
+                      final idx = videoDetailController.vttSubtitlesIndex.value;
+                      if (idx > 0) videoDetailController.setSubtitle(idx);
+                    },
+                    child: Text(
+                      Pref.subtitleFreeAi
+                          ? 'AI miễn phí (không cần key): BẬT'
+                          : 'AI miễn phí (không cần key): TẮT',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: const .new(color: Colors.white, fontSize: 13),
+                    ),
+                  ),
+                  PopupMenuItem<int>(
                     value: -11,
                     height: 35,
                     onTap: () => showTranslateApiDialog(

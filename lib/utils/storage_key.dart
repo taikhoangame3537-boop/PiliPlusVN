@@ -198,7 +198,8 @@ abstract final class SettingBoxKey {
       subtitleLlmModel = 'subtitleLlmModel',
       grpcLocaleVi = 'grpcLocaleVi',
       subtitleBilingual = 'subtitleBilingual',
-      subtitleRules = 'subtitleRules';
+      subtitleRules = 'subtitleRules',
+      subtitleFreeAi = 'subtitleFreeAi';
 
   static const String webdavUri = 'webdavUri',
       webdavUsername = 'webdavUsername',

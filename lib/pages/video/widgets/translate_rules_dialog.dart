@@ -21,6 +21,7 @@ void showTranslateRulesDialog(BuildContext context, {VoidCallback? onSaved}) {
               '• 知到 => 知道   sửa phụ đề gốc trước khi dịch\n'
               '• 末世 = Tận thế   thuật ngữ/tên riêng, luôn dịch thành vế phải\n'
               '• lỗi cũ >> lỗi mới   sửa bản dịch tiếng Việt sau khi dịch\n'
+              '• @hv 林凡 苏婉   liệt kê tên người, tự đổi sang Hán Việt\n'
               'Dòng bắt đầu bằng # là ghi chú.',
               style: TextStyle(fontSize: 12),
             ),
