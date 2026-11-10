@@ -33,6 +33,7 @@ import 'package:PiliPlus/pages/video/controller.dart';
 import 'package:PiliPlus/pages/video/introduction/pgc/controller.dart';
 import 'package:PiliPlus/pages/video/introduction/ugc/controller.dart';
 import 'package:PiliPlus/pages/video/widgets/translate_api_dialog.dart';
+import 'package:PiliPlus/pages/video/widgets/translate_rules_dialog.dart';
 import 'package:PiliPlus/pages/video/post_panel/popup_menu_text.dart';
 import 'package:PiliPlus/pages/video/post_panel/view.dart';
 import 'package:PiliPlus/pages/video/widgets/header_control.dart';
@@ -744,6 +745,25 @@ class _PLVideoPlayerState extends State<PLVideoPlayer>
                     ),
                     child: const Text(
                       'API dịch phụ đề…',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: .new(color: Colors.white, fontSize: 13),
+                    ),
+                  ),
+                  PopupMenuItem<int>(
+                    value: -12,
+                    height: 35,
+                    onTap: () => showTranslateRulesDialog(
+                      context,
+                      onSaved: () {
+                        videoDetailController.viSubtitles.clear();
+                        final idx =
+                            videoDetailController.vttSubtitlesIndex.value;
+                        if (idx > 0) videoDetailController.setSubtitle(idx);
+                      },
+                    ),
+                    child: const Text(
+                      'Quy tắc dịch…',
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: .new(color: Colors.white, fontSize: 13),

@@ -611,6 +611,12 @@ abstract final class Pref {
   static bool get enableDragSubtitle =>
       _setting.get(SettingBoxKey.enableDragSubtitle, defaultValue: false);
 
+  static String get subtitleRules =>
+      _setting.get(SettingBoxKey.subtitleRules, defaultValue: '');
+
+  static bool get subtitleBilingual =>
+      _setting.get(SettingBoxKey.subtitleBilingual, defaultValue: false);
+
   static bool get grpcLocaleVi =>
       _setting.get(SettingBoxKey.grpcLocaleVi, defaultValue: false);
 

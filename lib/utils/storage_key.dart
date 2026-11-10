@@ -196,7 +196,9 @@ abstract final class SettingBoxKey {
       subtitleLlmBaseUrl = 'subtitleLlmBaseUrl',
       subtitleLlmKey = 'subtitleLlmKey',
       subtitleLlmModel = 'subtitleLlmModel',
-      grpcLocaleVi = 'grpcLocaleVi';
+      grpcLocaleVi = 'grpcLocaleVi',
+      subtitleBilingual = 'subtitleBilingual',
+      subtitleRules = 'subtitleRules';
 
   static const String webdavUri = 'webdavUri',
       webdavUsername = 'webdavUsername',

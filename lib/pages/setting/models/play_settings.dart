@@ -263,6 +263,14 @@ List<SettingsModel> get playSettings => [
     onTap: _showSubtitleDialog,
   ),
   const SwitchModel(
+    title: 'Phụ đề song ngữ khi dịch',
+    subtitle:
+        'Hiện dòng gốc phía trên bản dịch để kiểm tra bản dịch sai hay phụ đề gốc sai',
+    leading: Icon(Icons.subtitles_outlined),
+    setKey: SettingBoxKey.subtitleBilingual,
+    defaultVal: false,
+  ),
+  const SwitchModel(
     title: 'Dịch bình luận sang tiếng Việt (thử nghiệm)',
     subtitle:
         'Gửi locale vi-VN cho gRPC để nút "Dịch" của Bilibili dịch ra tiếng Việt. Cần khởi động lại ứng dụng',
