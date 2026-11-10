@@ -135,7 +135,11 @@ abstract final class SubtitleTranslator {
   /// nằm trong đúng cue (đúng thời gian) và đúng vị trí dòng của nó. Không bao
   /// giờ gộp hai dòng/hai cue hay chuyển chữ từ dòng này sang dòng khác, vì
   /// các dòng liền nhau có thể do các nhân vật khác nhau nói.
-  static Future<String> translateVtt(String vtt, {String? title}) async {
+  static Future<String> translateVtt(
+    String vtt, {
+    String? title,
+    void Function(double fraction)? onProgress,
+  }) async {
     // quy tắc người dùng đứng trước nên được ưu tiên hơn quy tắc có sẵn
     final rules = _Rules.parse('${Pref.subtitleRules}\n$kDefaultSubtitleRules');
     final cues = <_Cue>[];
@@ -215,11 +219,13 @@ abstract final class SubtitleTranslator {
           failed++;
         }
       }
-      if (out == null) continue; // giữ nguyên bản gốc cho lô lỗi
-      for (var k = 0; k < slice.length; k++) {
-        final t = rules.post(out[k].trim());
-        if (t.isNotEmpty) cues[slice[k][0]].out[slice[k][1]] = t;
-      }
+      if (out != null) {
+        for (var k = 0; k < slice.length; k++) {
+          final t = rules.post(out[k].trim());
+          if (t.isNotEmpty) cues[slice[k][0]].out[slice[k][1]] = t;
+        }
+      } // lô lỗi: giữ nguyên bản gốc
+      onProgress?.call(end / units.length);
     }
     if (fellBack) lastWarning = lastError;
 

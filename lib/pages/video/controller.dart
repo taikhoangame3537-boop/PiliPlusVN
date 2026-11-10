@@ -1058,6 +1058,8 @@ class VideoDetailController extends GetxController
   final RxList<Subtitle> subtitles = RxList<Subtitle>();
   final Map<int, SubtitleData> vttSubtitles = {};
   final Map<int, SubtitleData> viSubtitles = {};
+  // tiến trình dịch phụ đề (0-100), -1 = không đang dịch
+  final RxInt translateProgress = (-1).obs;
   late final vttSubtitlesIndex = (-1).obs;
   Future<SubtitleData?> loadFileSubtitle({
     required String path,
@@ -1124,10 +1126,14 @@ class VideoDetailController extends GetxController
       var vi = viSubtitles[index - 1];
       if (vi == null) {
         SmartDialog.showToast('Đang dịch phụ đề sang tiếng Việt…');
+        translateProgress.value = 0;
         try {
           final text = await SubtitleTranslator.translateVtt(
             subtitle.id,
             title: _videoTitle,
+            onProgress: (f) {
+              if (!isClosed) translateProgress.value = (f * 100).floor();
+            },
           );
           if (isClosed) return;
           vi = (isData: true, id: text);
@@ -1140,6 +1146,8 @@ class VideoDetailController extends GetxController
           );
         } catch (e) {
           SmartDialog.showToast('Dịch phụ đề thất bại: $e');
+        } finally {
+          if (!isClosed) translateProgress.value = -1;
         }
       }
       if (vi != null) subtitle = vi;
