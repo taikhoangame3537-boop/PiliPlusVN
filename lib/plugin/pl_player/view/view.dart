@@ -749,7 +749,7 @@ class _PLVideoPlayerState extends State<PLVideoPlayer>
                           : 'AI miễn phí (không cần key): TẮT',
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: const .new(color: Colors.white, fontSize: 13),
+                      style: .new(color: Colors.white, fontSize: 13),
                     ),
                   ),
                   PopupMenuItem<int>(
