@@ -260,16 +260,34 @@ class _VideoReplyReplyPanelState extends State<VideoReplyReplyPanel>
                     : const SizedBox.shrink();
               },
             ),
-            Obx(
-              () => controller.replyTree.value == null
-                  ? IconButton(
+            IconButton(
                       visualDensity: .compact,
                       onPressed: () {
+                if (controller.replyTree.rawValue != null) {
+                  controller
+                    ..showReplyTree = !controller.showReplyTree
+                    ..replyTree.refresh();
+                  return;
+                }
+
                         if (controller.isEnd && controller.foldCard == null) {
                           controller.buildTree();
                         } else if (controller.inFetchReply) {
                           SmartDialog.showToast('Đang tải bình luận, vui lòng chờ');
                         } else {
+                  if (controller.foldCard != null) {
+                    controller.nextReplyRound();
+                    return;
+                  }
+                  final count = controller.count.rawValue;
+                  if (count != -1) {
+                    final total = (count / 20).ceil();
+                    final remain = total - (controller.page - 1);
+                    if (remain < 5) {
+                      controller.nextReplyRound();
+                      return;
+                    }
+                  }
                           showConfirmDialog(
                             context: context,
                             title: const Text('Có tải toàn bộ bình luận để hiển thị bình luận dạng chuỗi không?'),
@@ -284,8 +302,6 @@ class _VideoReplyReplyPanelState extends State<VideoReplyReplyPanel>
                       ),
                       color: colorScheme.outline,
                       tooltip: 'Hiển thị dạng chuỗi',
-                    )
-                  : const SizedBox.shrink(),
             ),
             Expanded(
               child: Obx(
@@ -327,7 +343,8 @@ class _VideoReplyReplyPanelState extends State<VideoReplyReplyPanel>
           ),
         );
       case Success(:final response!):
-        if (controller.replyTree.value case final tree?) {
+        if (controller.replyTree.value case final tree?
+            when controller.showReplyTree) {
           return SuperSliverList.builder(
             listController: controller.listController,
             itemCount: tree.length + 1,

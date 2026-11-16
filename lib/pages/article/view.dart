@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:PiliPlus/common/style.dart';
 import 'package:PiliPlus/common/widgets/badge.dart';
 import 'package:PiliPlus/common/widgets/flutter/refresh_indicator.dart';
@@ -19,7 +18,7 @@ import 'package:PiliPlus/pages/article/controller.dart';
 import 'package:PiliPlus/pages/article/widgets/article_ops.dart';
 import 'package:PiliPlus/pages/article/widgets/html_render.dart';
 import 'package:PiliPlus/pages/article/widgets/opus_content.dart';
-import 'package:PiliPlus/pages/article/widgets/sliver_list_ext.dart';
+import 'package:PiliPlus/common/widgets/sliver/sliver_reverse.dart';
 import 'package:PiliPlus/pages/article/widgets/sliver_to_box_adapter.dart';
 import 'package:PiliPlus/pages/common/dyn/common_dyn_page.dart';
 import 'package:PiliPlus/pages/dynamics_repost/view.dart';
@@ -41,6 +40,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:html/parser.dart' as parser;
 import 'package:material_ui/material_ui.dart';
+
 
 class ArticlePage extends StatefulWidget {
   const ArticlePage({super.key});
@@ -252,7 +252,7 @@ class _ArticlePageState extends CommonDynPageState<ArticlePage>
                 ),
               );
             } else {
-              content = SliverListExt.separated(
+              content = SliverListReverse.separated(
                 reverse: reverse,
                 itemCount: res.body!.children.length,
                 itemBuilder: (context, index) {

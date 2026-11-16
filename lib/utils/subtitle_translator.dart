@@ -180,53 +180,71 @@ abstract final class SubtitleTranslator {
     lastWarning = null;
     var fellBack = false;
     var failed = 0;
-    var batches = 0;
     String? lastError;
+    final batchStarts = [for (var i = 0; i < units.length; i += size) i];
+    final batches = batchStarts.length;
+    // AI miễn phí bị giới hạn tốc độ nên chạy ít luồng hơn
+    final concurrency = free ? 2 : (useLlm ? 3 : 4);
 
-    for (var start = 0; start < units.length; start += size) {
-      batches++;
-      final end = (start + size).clamp(0, units.length);
-      final slice = units.sublist(start, end);
-      final texts = [for (final u in slice) cues[u[0]].src[u[1]]];
-      List<String>? out;
-      try {
-        if (useLlm) {
-          // ngữ cảnh: vài dòng ngay trước lô này (gốc + bản dịch)
-          final ctx = <Map<String, String>>[
-            for (final u in units.sublist(
-              start > _contextSize ? start - _contextSize : 0,
-              start,
-            ))
-              {'src': cues[u[0]].orig[u[1]], 'vi': cues[u[0]].out[u[1]]},
-          ];
-          out = await _llm(texts, baseUrl, apiKey, model, videoTitle, ctx);
-        } else {
-          out = await _google(texts);
-        }
-      } catch (e) {
-        lastError = useLlm
-            ? '$e'.replaceFirst('Exception: ', '')
-            : _describe(e, 'translate.googleapis.com');
-        if (free) {
-          // AI miễn phí lỗi/quá tải: dịch lô này bằng Google thay vì bỏ trống
-          try {
-            out = await _google(texts);
-            fellBack = true;
-          } catch (_) {
+    // chạy nhiều lô cùng lúc cho nhanh; mỗi lô vẫn ghi đúng vào các dòng của nó
+    var next = 0;
+    var doneUnits = 0;
+    Future<void> worker() async {
+      while (true) {
+        final bi = next++;
+        if (bi >= batchStarts.length) return;
+        final start = batchStarts[bi];
+        final end = (start + size).clamp(0, units.length);
+        final slice = units.sublist(start, end);
+        final texts = [for (final u in slice) cues[u[0]].src[u[1]]];
+        List<String>? out;
+        try {
+          if (useLlm) {
+            // ngữ cảnh: vài dòng ngay trước lô này; bản dịch "vi" chỉ có khi
+            // dòng đó đã dịch xong (các lô chạy song song nên có thể chưa có)
+            final ctx = <Map<String, String>>[
+              for (final u in units.sublist(
+                start > _contextSize ? start - _contextSize : 0,
+                start,
+              ))
+                {
+                  'src': cues[u[0]].orig[u[1]],
+                  if (cues[u[0]].out[u[1]] != cues[u[0]].orig[u[1]])
+                    'vi': cues[u[0]].out[u[1]],
+                },
+            ];
+            out = await _llm(texts, baseUrl, apiKey, model, videoTitle, ctx);
+          } else {
+            out = await _googleRetry(texts);
+          }
+        } catch (e) {
+          lastError = useLlm
+              ? '$e'.replaceFirst('Exception: ', '')
+              : _describe(e, 'translate.googleapis.com');
+          if (free) {
+            // AI miễn phí lỗi/quá tải: dịch lô này bằng Google thay vì bỏ trống
+            try {
+              out = await _google(texts);
+              fellBack = true;
+            } catch (_) {
+              failed++;
+            }
+          } else {
             failed++;
           }
-        } else {
-          failed++;
         }
+        if (out != null) {
+          for (var k = 0; k < slice.length; k++) {
+            final t = rules.post(out[k].trim());
+            if (t.isNotEmpty) cues[slice[k][0]].out[slice[k][1]] = t;
+          }
+        } // lô lỗi: giữ nguyên bản gốc
+        doneUnits += slice.length;
+        onProgress?.call(doneUnits / units.length);
       }
-      if (out != null) {
-        for (var k = 0; k < slice.length; k++) {
-          final t = rules.post(out[k].trim());
-          if (t.isNotEmpty) cues[slice[k][0]].out[slice[k][1]] = t;
-        }
-      } // lô lỗi: giữ nguyên bản gốc
-      onProgress?.call(end / units.length);
     }
+
+    await Future.wait([for (var w = 0; w < concurrency; w++) worker()]);
     if (fellBack) lastWarning = lastError;
 
     // mọi lô đều lỗi -> báo lỗi thay vì trả về phụ đề chưa dịch
@@ -247,6 +265,16 @@ abstract final class SubtitleTranslator {
       '\n\n',
     );
     return sb.toString();
+  }
+
+  /// Chạy song song dễ gặp lỗi tạm thời (quá tải/giới hạn tốc độ): thử lại một lần.
+  static Future<List<String>> _googleRetry(List<String> texts) async {
+    try {
+      return await _google(texts);
+    } catch (_) {
+      await Future<void>.delayed(const Duration(milliseconds: 1500));
+      return _google(texts);
+    }
   }
 
   static Future<List<String>> _google(List<String> texts) async {
@@ -274,7 +302,7 @@ abstract final class SubtitleTranslator {
       'Bạn là dịch giả phụ đề video chuyên nghiệp, dịch sang tiếng Việt như người bản ngữ nói, không dịch từng chữ.\n'
       'Quy tắc:\n'
       '1. Mỗi phần tử của "lines" là MỘT lời thoại hiển thị riêng trên màn hình, và các dòng liền nhau có thể do các nhân vật KHÁC NHAU nói. Dịch từng dòng độc lập: tuyệt đối không gộp hai dòng, không chuyển chữ hay ý từ dòng này sang dòng khác, kể cả khi một câu bị ngắt giữa hai dòng. Dòng nào dịch vào dòng đó, ngắn gọn dễ đọc.\n'
-      '2. Dùng "title" và "previous" (các dòng ngay trước đó, gồm bản gốc "src" và bản dịch "vi") chỉ để hiểu ngữ cảnh và giữ thuật ngữ, tên riêng, cách xưng hô nhất quán. KHÔNG dịch lại "previous".\n'
+      '2. Dùng "title" và "previous" (các dòng ngay trước đó, gồm bản gốc "src" và, nếu đã có, bản dịch "vi") chỉ để hiểu ngữ cảnh và giữ thuật ngữ, tên riêng, cách xưng hô nhất quán. KHÔNG dịch lại "previous".\n'
       '3. Tên riêng, tên nhân vật/game/sản phẩm: giữ nguyên hoặc dùng phiên âm quen thuộc với người Việt. Xưng hô và giọng điệu phù hợp thể loại video.\n'
       '4. Phụ đề thường do máy nhận dạng giọng nói (ASR) tạo ra nên hay sai ở từ đồng âm/gần âm. Nếu một câu vô nghĩa, thô tục hoặc không hợp ngữ cảnh, hãy suy ra câu đúng từ các dòng xung quanh và dịch câu đúng đó; chỉ làm vậy khi thật sự vô lý, còn lại dịch sát nghĩa.\n'
       '5. Không giải thích, không thêm bớt thông tin, không giữ lại ký tự thừa.\n'

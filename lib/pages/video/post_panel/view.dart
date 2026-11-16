@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:math';
-
 import 'package:PiliPlus/common/widgets/button/icon_button.dart';
 import 'package:PiliPlus/common/widgets/loading_widget/loading_widget.dart';
 import 'package:PiliPlus/common/widgets/pair.dart';
@@ -16,13 +15,13 @@ import 'package:PiliPlus/pages/video/controller.dart';
 import 'package:PiliPlus/pages/video/post_panel/popup_menu_text.dart';
 import 'package:PiliPlus/plugin/pl_player/controller.dart';
 import 'package:PiliPlus/utils/duration_utils.dart';
-import 'package:PiliPlus/utils/extension/context_ext.dart';
 import 'package:PiliPlus/utils/platform_utils.dart';
 import 'package:flutter/foundation.dart' show kDebugMode;
 import 'package:flutter/services.dart' show FilteringTextInputFormatter;
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 import 'package:material_ui/material_ui.dart';
+
 
 class PostPanel extends CommonSlidePage {
   const PostPanel({
@@ -127,7 +126,7 @@ class PostPanel extends CommonSlidePage {
                     FilteringTextInputFormatter.allow(RegExp(r'[\d:.]+')),
                   ],
                 );
-                if (PlatformUtils.isDesktop || context.isTablet) {
+                if (PlatformUtils.isDesktop || MediaQuery.isTabletOf(context)) {
                   res = await showDialog<String>(
                     context: context,
                     builder: (context) => AlertDialog(

@@ -1,8 +1,8 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:webview_all_linux/webview_all_linux.dart';
 import 'package:webview_platform_interface/webview_platform_interface.dart';
+
 
 /// App callbacks and initialization for the Linux WebView plugin.
 class LinuxWebview extends StatefulWidget {

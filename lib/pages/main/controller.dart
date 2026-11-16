@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:math' as math;
-
 import 'package:PiliPlus/common/widgets/view_safe_area.dart';
 import 'package:PiliPlus/grpc/dyn.dart';
 import 'package:PiliPlus/http/loading_state.dart';
@@ -25,6 +24,7 @@ import 'package:easy_debounce/easy_throttle.dart';
 import 'package:get/get.dart';
 import 'package:material_ui/material_ui.dart';
 
+
 class MainController extends GetxController
     with GetSingleTickerProviderStateMixin, AccountMixin {
   @override
@@ -36,7 +36,7 @@ class MainController extends GetxController
   RxBool? showBottomBar;
   late final bool hideBottomBar;
   late final barHideType = Pref.barHideType;
-  bool useBottomNav = false;
+  bool useBottomNav = true;
   late dynamic controller;
   final RxInt selectedIndex = 0.obs;
 

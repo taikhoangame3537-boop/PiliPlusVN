@@ -1,6 +1,5 @@
 import 'dart:io' show Platform;
 import 'dart:math' as math;
-
 import 'package:PiliPlus/common/widgets/custom_icon.dart';
 import 'package:PiliPlus/common/widgets/extra_hittest_stack.dart';
 import 'package:PiliPlus/common/widgets/scaffold/simple_scaffold.dart';
@@ -13,6 +12,7 @@ import 'package:PiliPlus/utils/storage.dart';
 import 'package:PiliPlus/utils/storage_key.dart';
 import 'package:PiliPlus/utils/storage_pref.dart';
 import 'package:material_ui/material_ui.dart';
+
 
 const kFullScreenSCWidth = 255.0;
 

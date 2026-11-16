@@ -11,21 +11,21 @@
 // ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
-
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 import 'package:protobuf/well_known_types/google/protobuf/any.pb.dart' as $0;
-
 import '../../../account/service/v1.pb.dart' as $4;
 import '../../../app/dynamic/v2.pb.dart' as $5;
 import '../../../dagw/component/avatar/v1.pb.dart' as $3;
 import '../../../pagination.pb.dart' as $1;
 import '../../../vas/garb/model.pb.dart' as $2;
 import 'v1.pbenum.dart';
-
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
-
 export 'v1.pbenum.dart';
+
+
+
+
 
 class Activity extends $pb.GeneratedMessage {
   factory Activity({

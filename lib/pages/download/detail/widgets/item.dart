@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:io';
-
 import 'package:PiliPlus/common/style.dart';
 import 'package:PiliPlus/common/widgets/badge.dart';
 import 'package:PiliPlus/common/widgets/dialog/dialog.dart';
@@ -25,6 +24,7 @@ import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:path/path.dart' as path;
+
 
 class DetailItem extends StatelessWidget {
   const DetailItem({
@@ -126,11 +126,36 @@ class DetailItem extends StatelessWidget {
                     child: const Text('Đoạn nhảy'),
                   ),
                 if (entry.isCompleted) ...[
+                  if (entry.ep != null)
                   DialogOption(
-                    onPressed: () =>
-                        _onUpdate(() => downloadService.updateSegments(entry)),
-                    child: const Text('Cập nhật đoạn nhảy'),
+                      onPressed: () => _onUpdate(
+                        () => downloadService.updatePgcSegmentsAndVolume(entry),
+                      ),
+                      child: const Text('Cập nhật đoạn nhảy, cân bằng âm lượng'),
+                    )
+                  else ...[
+                    DialogOption(
+                      onPressed: () => _onUpdate(
+                        () => downloadService.updateUgcSeasonInfo(
+                          entry,
+                          refresh: true,
+                        ),
+                      ),
+                    child: const Text('Cập nhật thông tin bộ sưu tập'),
                   ),
+                    DialogOption(
+                      onPressed: () => _onUpdate(
+                        () => downloadService.updateUgcSegments(entry),
+                      ),
+                      child: const Text('Cập nhật đoạn nhảy'),
+                    ),
+                    DialogOption(
+                      onPressed: () => _onUpdate(
+                        () => downloadService.updateUgcVolume(entry),
+                      ),
+                      child: const Text('Cập nhật cân bằng âm lượng'),
+                    ),
+                  ],
                   DialogOption(
                     onPressed: () =>
                         _onUpdate(() => downloadService.updatePlayInfo(entry)),

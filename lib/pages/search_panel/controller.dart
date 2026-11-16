@@ -1,5 +1,4 @@
 import 'dart:async' show StreamSubscription, Timer;
-
 import 'package:PiliPlus/http/loading_state.dart';
 import 'package:PiliPlus/http/search.dart';
 import 'package:PiliPlus/models/common/search/article_search_type.dart';
@@ -12,6 +11,7 @@ import 'package:PiliPlus/pages/search_result/controller.dart';
 import 'package:PiliPlus/utils/extension/scroll_controller_ext.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
+
 
 class SearchPanelController<R extends SearchNumData<T>, T>
     extends CommonListController<R, T> {

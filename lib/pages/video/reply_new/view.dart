@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:io';
 import 'dart:math' show max;
-
 import 'package:PiliPlus/common/widgets/button/toolbar_icon_button.dart';
 import 'package:PiliPlus/common/widgets/custom_icon.dart';
 import 'package:PiliPlus/common/widgets/flutter/text_field/controller.dart'
@@ -23,7 +22,6 @@ import 'package:PiliPlus/pages/emote/view.dart';
 import 'package:PiliPlus/pages/video/controller.dart';
 import 'package:PiliPlus/pages/video/reply_search_item/view.dart';
 import 'package:PiliPlus/utils/duration_utils.dart';
-import 'package:PiliPlus/utils/extension/context_ext.dart';
 import 'package:PiliPlus/utils/grid.dart';
 import 'package:PiliPlus/utils/latex_to_unicode.dart';
 import 'package:PiliPlus/utils/path_utils.dart';
@@ -33,6 +31,7 @@ import 'package:PiliPlus/utils/utils.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 import 'package:material_ui/material_ui.dart' hide TextField;
+
 
 class ReplyPage extends CommonRichTextPubPage {
   const ReplyPage({
@@ -221,7 +220,7 @@ class _ReplyPageState extends CommonRichTextPubPageState<ReplyPage> {
 
   @override
   Widget buildMorePanel() {
-    double height = context.isTablet ? 300 : 170;
+    double height = MediaQuery.isTabletOf(context) ? 300 : 170;
     final keyboardHeight = controller.keyboardHeight;
     if (keyboardHeight != 0) {
       height = max(height, keyboardHeight);

@@ -1,5 +1,4 @@
 import 'dart:io' show Platform;
-
 import 'package:PiliPlus/build_config.dart';
 import 'package:PiliPlus/common/constants.dart';
 import 'package:PiliPlus/http/api.dart';
@@ -14,6 +13,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart' show kDebugMode;
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:material_ui/material_ui.dart';
+
 
 abstract final class Update {
   // 检查更新

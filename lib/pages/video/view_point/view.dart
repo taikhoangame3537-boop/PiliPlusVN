@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:PiliPlus/common/style.dart';
 import 'package:PiliPlus/common/widgets/button/icon_button.dart';
 import 'package:PiliPlus/common/widgets/image/network_img_layer.dart';
@@ -12,6 +11,7 @@ import 'package:PiliPlus/utils/duration_utils.dart';
 import 'package:PiliPlus/utils/scroll_offset_helper.dart';
 import 'package:get/get.dart';
 import 'package:material_ui/material_ui.dart';
+
 
 class ViewPointsPage extends CommonSlidePage {
   const ViewPointsPage({

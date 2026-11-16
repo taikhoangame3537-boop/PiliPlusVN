@@ -1,6 +1,5 @@
 // edit from package:dio_cookie_manager
 import 'dart:io';
-
 import 'package:PiliPlus/http/api.dart';
 import 'package:PiliPlus/http/constants.dart';
 import 'package:PiliPlus/models/common/account_type.dart';
@@ -16,6 +15,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart' show kDebugMode;
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:material_ui/material_ui.dart';
+
 
 final _setCookieReg = RegExp('(?<=)(,)(?=[^;]+?=)');
 

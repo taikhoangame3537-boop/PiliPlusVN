@@ -11,8 +11,8 @@
 // ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
-
 import 'package:protobuf/protobuf.dart' as $pb;
+
 
 class ModeType extends $pb.ProtobufEnum {
   static const ModeType NORMAL = ModeType._(0, _omitEnumNames ? '' : 'NORMAL');

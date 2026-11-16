@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:PiliPlus/http/dynamics.dart';
 import 'package:PiliPlus/http/loading_state.dart';
 import 'package:PiliPlus/models/common/dynamic/dynamics_type.dart';
@@ -14,6 +13,7 @@ import 'package:PiliPlus/utils/storage_pref.dart';
 import 'package:easy_debounce/easy_throttle.dart';
 import 'package:get/get.dart';
 import 'package:material_ui/material_ui.dart' show TabController;
+
 
 class DynamicsController
     extends CommonDataController<FollowUpModel, FollowUpModel>

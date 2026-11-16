@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:PiliPlus/common/widgets/scroll_physics.dart' show ReloadMixin;
 import 'package:PiliPlus/http/dynamics.dart';
 import 'package:PiliPlus/http/loading_state.dart';
@@ -11,6 +10,7 @@ import 'package:PiliPlus/pages/common/reply/reply_controller.dart';
 import 'package:PiliPlus/utils/id_utils.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
+
 
 class DynamicDetailController extends CommonDynController
     with

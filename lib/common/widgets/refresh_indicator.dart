@@ -1,8 +1,8 @@
 import 'dart:async' show StreamSubscription;
-
 import 'package:PiliPlus/utils/extension/theme_ext.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart' show RxBool;
 import 'package:material_ui/material_ui.dart';
+
 
 // ignore: camel_case_types
 class RefreshIndicator_ extends StatefulWidget {

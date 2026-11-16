@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:PiliPlus/common/widgets/dialog/export_import.dart';
 import 'package:PiliPlus/common/widgets/disabled_icon.dart';
 import 'package:PiliPlus/common/widgets/loading_widget/http_error.dart';
@@ -12,12 +11,12 @@ import 'package:PiliPlus/pages/search/controller.dart';
 import 'package:PiliPlus/pages/search/widgets/hot_keyword.dart';
 import 'package:PiliPlus/pages/search/widgets/search_text.dart';
 import 'package:PiliPlus/utils/em.dart' show Em;
-import 'package:PiliPlus/utils/extension/size_ext.dart';
 import 'package:PiliPlus/utils/storage.dart';
 import 'package:PiliPlus/utils/storage_key.dart';
 import 'package:PiliPlus/utils/utils.dart';
 import 'package:get/get.dart';
 import 'package:material_ui/material_ui.dart';
+
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
@@ -44,7 +43,7 @@ class _SearchPageState extends State<SearchPage> {
     super.didChangeDependencies();
     theme = Theme.of(context);
     padding = MediaQuery.viewPaddingOf(context);
-    isPortrait = MediaQuery.sizeOf(context).isPortrait;
+    isPortrait = MediaQuery.isPortraitOf(context);
   }
 
   @override

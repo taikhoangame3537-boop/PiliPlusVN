@@ -1,12 +1,12 @@
 import 'dart:convert';
 import 'dart:io' show Platform;
 import 'dart:ui';
-
 import 'package:PiliPlus/utils/android/bindings.g.dart';
 import 'package:PiliPlus/utils/device_utils.dart';
 import 'package:PiliPlus/utils/page_utils.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:jni/jni.dart';
+
 
 abstract final class PiliAndroidHelper {
   static final isPipAvailable = AndroidHelper.isPipAvailable;

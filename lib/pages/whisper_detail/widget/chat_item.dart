@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:math' as math;
-
 import 'package:PiliPlus/common/constants.dart';
 import 'package:PiliPlus/common/style.dart';
 import 'package:PiliPlus/common/widgets/badge.dart';
@@ -25,6 +24,7 @@ import 'package:PiliPlus/utils/page_utils.dart';
 import 'package:cached_network_image_ce/cached_network_image.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:material_ui/material_ui.dart';
+
 
 class ChatItem extends StatelessWidget {
   static MsgType msgTypeFromValue(int value) {

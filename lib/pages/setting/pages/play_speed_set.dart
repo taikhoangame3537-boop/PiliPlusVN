@@ -1,10 +1,8 @@
 import 'dart:math';
-
 import 'package:PiliPlus/common/widgets/flutter/list_tile.dart';
 import 'package:PiliPlus/common/widgets/scaffold/simple_scaffold.dart';
 import 'package:PiliPlus/common/widgets/view_safe_area.dart';
 import 'package:PiliPlus/pages/setting/widgets/switch_item.dart';
-import 'package:PiliPlus/utils/extension/context_ext.dart';
 import 'package:PiliPlus/utils/filtering_text.dart';
 import 'package:PiliPlus/utils/storage.dart';
 import 'package:PiliPlus/utils/storage_key.dart';
@@ -13,6 +11,7 @@ import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 import 'package:hive_ce/hive.dart';
 import 'package:material_ui/material_ui.dart' hide ListTile;
+
 
 class PlaySpeedPage extends StatefulWidget {
   const PlaySpeedPage({super.key});
@@ -120,7 +119,7 @@ class _PlaySpeedPageState extends State<PlaySpeedPage> {
       isScrollControlled: true,
       clipBehavior: Clip.hardEdge,
       constraints: BoxConstraints(
-        maxWidth: min(640, context.mediaQueryShortestSide),
+        maxWidth: min(640, MediaQuery.shortestSideOf(context)),
       ),
       builder: (context) {
         return Column(

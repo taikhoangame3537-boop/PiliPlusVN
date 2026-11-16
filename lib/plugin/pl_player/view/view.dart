@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:math' as math;
 import 'dart:ui' as ui;
-
 import 'package:PiliPlus/common/assets.dart';
 import 'package:PiliPlus/common/constants.dart';
 import 'package:PiliPlus/common/style.dart';
@@ -32,8 +31,6 @@ import 'package:PiliPlus/pages/live_room/widgets/bottom_control.dart'
 import 'package:PiliPlus/pages/video/controller.dart';
 import 'package:PiliPlus/pages/video/introduction/pgc/controller.dart';
 import 'package:PiliPlus/pages/video/introduction/ugc/controller.dart';
-import 'package:PiliPlus/pages/video/widgets/translate_api_dialog.dart';
-import 'package:PiliPlus/pages/video/widgets/translate_rules_dialog.dart';
 import 'package:PiliPlus/pages/video/post_panel/popup_menu_text.dart';
 import 'package:PiliPlus/pages/video/post_panel/view.dart';
 import 'package:PiliPlus/pages/video/widgets/header_control.dart';
@@ -66,7 +63,6 @@ import 'package:PiliPlus/utils/path_utils.dart';
 import 'package:PiliPlus/utils/platform_utils.dart';
 import 'package:PiliPlus/utils/storage.dart';
 import 'package:PiliPlus/utils/storage_key.dart';
-import 'package:PiliPlus/utils/storage_pref.dart';
 import 'package:PiliPlus/utils/utils.dart';
 import 'package:canvas_danmaku/canvas_danmaku.dart';
 import 'package:collection/collection.dart';
@@ -85,8 +81,12 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'package:material_ui/material_ui.dart';
 import 'package:media_kit_video/media_kit_video.dart';
 import 'package:screen_brightness_platform_interface/screen_brightness_platform_interface.dart';
-
 part 'widgets.dart';
+import 'package:PiliPlus/pages/video/widgets/translate_rules_dialog.dart';
+import 'package:PiliPlus/pages/video/widgets/translate_api_dialog.dart';
+import 'package:PiliPlus/utils/storage_pref.dart';
+
+
 
 class PLVideoPlayer extends StatefulWidget {
   const PLVideoPlayer({

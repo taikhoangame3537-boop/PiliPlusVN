@@ -1,5 +1,4 @@
 import 'dart:math' show max;
-
 import 'package:PiliPlus/common/widgets/custom_icon.dart';
 import 'package:PiliPlus/pages/setting/models/model.dart';
 import 'package:PiliPlus/utils/extension/num_ext.dart';
@@ -12,6 +11,7 @@ import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:material_ui/material_ui.dart' hide RefreshIndicator;
+
 
 List<SettingsModel> get dmSettings => [
   const SwitchModel(

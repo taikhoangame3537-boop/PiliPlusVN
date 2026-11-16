@@ -1,6 +1,6 @@
 import 'package:hive_ce/hive.dart';
-
 part 'stat.g.dart';
+
 
 @HiveType(typeId: 1)
 class UserStat {

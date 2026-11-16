@@ -1,8 +1,8 @@
 import 'dart:collection';
-
 import 'package:PiliPlus/grpc/bilibili/main/community/reply/v1.pb.dart';
 import 'package:collection/collection.dart';
 import 'package:fixnum/fixnum.dart';
+
 
 /// 无法显示父评论的原因分类
 enum ReasonType {

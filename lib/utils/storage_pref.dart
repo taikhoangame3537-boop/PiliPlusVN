@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:PiliPlus/common/widgets/gesture/horizontal_drag_gesture_recognizer.dart'
     show deviceTouchSlop;
 import 'package:PiliPlus/common/widgets/pair.dart';
@@ -47,6 +46,7 @@ import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:hive_ce/hive.dart';
 import 'package:material_ui/material_ui.dart';
+
 
 abstract final class Pref {
   static final Box _setting = GStorage.setting;
@@ -1147,4 +1147,7 @@ abstract final class Pref {
 
   static bool get cachePlayInfo =>
       _setting.get(SettingBoxKey.cachePlayInfo, defaultValue: true);
+
+  static bool get autoWearMedal =>
+      _setting.get(SettingBoxKey.autoWearMedal, defaultValue: false);
 }

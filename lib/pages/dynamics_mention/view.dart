@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:math';
-
 import 'package:PiliPlus/common/widgets/loading_widget/http_error.dart';
 import 'package:PiliPlus/common/widgets/loading_widget/loading_widget.dart';
 import 'package:PiliPlus/common/widgets/scaffold/simple_scaffold.dart';
@@ -12,11 +11,11 @@ import 'package:PiliPlus/models_new/dynamic/dyn_mention/item.dart';
 import 'package:PiliPlus/pages/dynamics_mention/controller.dart';
 import 'package:PiliPlus/pages/dynamics_mention/widgets/item.dart';
 import 'package:PiliPlus/pages/search/controller.dart' show DebounceStreamState;
-import 'package:PiliPlus/utils/extension/context_ext.dart';
 import 'package:PiliPlus/utils/extension/iterable_ext.dart';
 import 'package:PiliPlus/utils/extension/scroll_controller_ext.dart';
 import 'package:get/get.dart';
 import 'package:material_ui/material_ui.dart';
+
 
 class DynMentionPanel extends StatefulWidget {
   const DynMentionPanel({
@@ -41,7 +40,7 @@ class DynMentionPanel extends StatefulWidget {
       useSafeArea: true,
       isScrollControlled: true,
       constraints: BoxConstraints(
-        maxWidth: min(600, context.mediaQueryShortestSide),
+        maxWidth: min(600, MediaQuery.shortestSideOf(context)),
       ),
       builder: (context) => DraggableScrollableSheet(
         expand: false,

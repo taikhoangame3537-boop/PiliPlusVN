@@ -1,5 +1,4 @@
 import 'dart:async' show StreamSubscription;
-
 import 'package:PiliPlus/common/style.dart';
 import 'package:PiliPlus/common/widgets/badge.dart';
 import 'package:PiliPlus/common/widgets/image/network_img_layer.dart';
@@ -17,6 +16,7 @@ import 'package:PiliPlus/utils/scroll_offset_helper.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:super_sliver_list/super_sliver_list.dart';
+
 
 const double _itemExtent = 140;
 

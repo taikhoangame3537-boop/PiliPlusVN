@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:PiliPlus/common/widgets/appbar/appbar.dart';
 import 'package:PiliPlus/common/widgets/dialog/dialog.dart';
 import 'package:PiliPlus/common/widgets/flutter/pop_scope.dart';
@@ -22,6 +21,7 @@ import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 import 'package:material_ui/material_ui.dart'
     hide SliverGridDelegateWithMaxCrossAxisExtent;
+
 
 class DownloadPagePage extends StatefulWidget {
   const DownloadPagePage({
@@ -100,10 +100,10 @@ class _DownloadPagePageState extends State<DownloadPagePage>
   }
 
   @override
-  Future<void> onUpdate(
+  Future<bool> onUpdate(
     Future<bool> Function(BiliDownloadEntryInfo e) toElement,
   ) async {
-    if (checkUpdateCount(checkedCount)) return;
+    if (checkUpdateCount(checkedCount)) return false;
 
     bool dismiss = false;
     SmartDialog.showLoading(
@@ -135,6 +135,8 @@ class _DownloadPagePageState extends State<DownloadPagePage>
     }
 
     toastUpdateResult(dismiss, isSuccess);
+
+    return isSuccess;
   }
 
   @override
@@ -209,7 +211,9 @@ class _DownloadPagePageState extends State<DownloadPagePage>
                           progress: widget.progress,
                           updatePageDm: updatePageDm,
                           updatePageSeg: updatePageSeg,
+                          updatePageVolume: updatePageVolume,
                           updatePagePlayInfo: updatePagePlayInfo,
+                          updatePageSeasonInfo: updatePageSeasonInfo,
                         );
                       },
                       itemCount: _pages.length,

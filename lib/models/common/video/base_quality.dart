@@ -1,8 +1,8 @@
 import 'package:PiliPlus/models/video/play/url.dart';
-
 part 'audio_quality.dart';
 part 'live_quality.dart';
 part 'video_quality.dart';
+
 
 sealed class BaseQuality {
   final int code;

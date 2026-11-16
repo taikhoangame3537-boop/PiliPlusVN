@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:math' as math;
-
 import 'package:PiliPlus/common/widgets/dialog/simple_dialog_option.dart';
 import 'package:PiliPlus/http/constants.dart';
 import 'package:PiliPlus/http/fav.dart';
@@ -34,6 +33,7 @@ import 'package:flutter/foundation.dart' show kDebugMode;
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 import 'package:material_ui/material_ui.dart';
+
 
 typedef OnChangePgcEpisode = Function(
   BaseEpisodeItem episode, {

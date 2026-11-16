@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:collection';
-
 import 'package:PiliPlus/grpc/bilibili/main/community/reply/v1.pb.dart'
     show ReplyInfo, DetailListReply;
 import 'package:PiliPlus/grpc/reply.dart';
@@ -19,6 +18,7 @@ import 'package:fixnum/fixnum.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:get/get.dart';
 import 'package:super_sliver_list/super_sliver_list.dart';
+
 
 class VideoReplyReplyController extends ReplyController
     with
@@ -317,12 +317,15 @@ class VideoReplyReplyController extends ReplyController
     super.onClose();
   }
 
+  bool showReplyTree = false;
   final replyTree = Rxn<ReplyTree>();
 
   void buildTree() {
     final data = loadingState.rawValue.data!;
+    if (data.isEmpty) return;
     final seen = HashSet<Int64>();
     data.retainWhere((i) => seen.add(i.id));
+    showReplyTree = true;
     replyTree.value = ReplyTree.build(
       data: data,
       seen: seen,

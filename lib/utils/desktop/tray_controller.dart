@@ -1,11 +1,11 @@
 import 'dart:io' show Platform;
-
 import 'package:PiliPlus/common/assets.dart';
 import 'package:PiliPlus/common/constants.dart';
 import 'package:PiliPlus/utils/desktop/window_controller.dart';
 import 'package:PiliPlus/utils/storage_pref.dart';
 import 'package:tray_manager/tray_manager.dart' as tray_manager show Image;
 import 'package:tray_manager/tray_manager.dart';
+
 
 class TrayController {
   TrayController._();

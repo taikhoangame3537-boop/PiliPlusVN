@@ -11,14 +11,14 @@
 // ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
-
 import 'package:protobuf/protobuf.dart' as $pb;
-
 import 'restriction.pbenum.dart';
-
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
-
 export 'restriction.pbenum.dart';
+
+
+
+
 
 class Restriction extends $pb.GeneratedMessage {
   factory Restriction({

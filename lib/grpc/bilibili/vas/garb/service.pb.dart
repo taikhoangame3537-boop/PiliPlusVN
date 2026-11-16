@@ -11,14 +11,14 @@
 // ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
-
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
-
 import '../../metadata/device.pb.dart' as $1;
 import 'model.pb.dart' as $0;
-
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
+
+
+
 
 class SailingEquipMultiReply extends $pb.GeneratedMessage {
   factory SailingEquipMultiReply({

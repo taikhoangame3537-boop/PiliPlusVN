@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:PiliPlus/grpc/bilibili/community/service/dm/v1.pb.dart';
 import 'package:PiliPlus/pages/danmaku/controller.dart';
 import 'package:PiliPlus/pages/danmaku/danmaku_model.dart';
@@ -10,6 +9,7 @@ import 'package:PiliPlus/utils/danmaku_utils.dart';
 import 'package:canvas_danmaku/canvas_danmaku.dart';
 import 'package:get/get.dart';
 import 'package:material_ui/material_ui.dart';
+
 
 /// 传入播放器控制器，监听播放进度，加载对应弹幕
 class PlDanmaku extends StatefulWidget {

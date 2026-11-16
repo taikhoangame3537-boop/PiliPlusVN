@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:PiliPlus/common/assets.dart';
 import 'package:PiliPlus/common/constants.dart';
 import 'package:PiliPlus/common/style.dart';
@@ -36,7 +35,6 @@ import 'package:PiliPlus/utils/color_utils.dart';
 import 'package:PiliPlus/utils/danmaku_utils.dart';
 import 'package:PiliPlus/utils/date_utils.dart';
 import 'package:PiliPlus/utils/duration_utils.dart';
-import 'package:PiliPlus/utils/extension/context_ext.dart';
 import 'package:PiliPlus/utils/extension/iterable_ext.dart';
 import 'package:PiliPlus/utils/extension/num_ext.dart';
 import 'package:PiliPlus/utils/extension/selectable_region_ext.dart';
@@ -61,8 +59,9 @@ import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:protobuf/protobuf.dart';
-
 part 'package:PiliPlus/common/widgets/context_menu/reply_menu_helper.dart';
+
+
 
 const _replyTextButtonStyle = ButtonStyle(
   visualDensity: VisualDensity.compact,
@@ -453,7 +452,7 @@ class ReplyItemGrpc extends StatelessWidget {
     useSafeArea: true,
     isScrollControlled: true,
     constraints: BoxConstraints(
-      maxWidth: min(640, context.mediaQueryShortestSide),
+      maxWidth: min(640, MediaQuery.shortestSideOf(context)),
     ),
     builder: (context) => _morePanel(
       context: context,
@@ -888,7 +887,7 @@ class ReplyItemGrpc extends StatelessWidget {
       useSafeArea: true,
       isScrollControlled: true,
       constraints: BoxConstraints(
-        maxWidth: min(640, context.mediaQueryShortestSide),
+        maxWidth: min(640, MediaQuery.shortestSideOf(context)),
       ),
       builder: (context) => _morePanel(
         context: context,

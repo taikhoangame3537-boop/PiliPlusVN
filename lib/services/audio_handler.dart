@@ -1,6 +1,5 @@
 import 'dart:io' show File, Platform;
 import 'dart:ui' show PlatformDispatcher;
-
 import 'package:PiliPlus/common/constants.dart';
 import 'package:PiliPlus/grpc/bilibili/app/listener/v1.pb.dart' show DetailItem;
 import 'package:PiliPlus/models_new/download/bili_download_entry_info.dart';
@@ -28,6 +27,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:jni/jni.dart' show JStringExtension;
 import 'package:path/path.dart' as path;
+
 
 Future<VideoPlayerServiceHandler> initAudioService() {
   if (Platform.isLinux) {

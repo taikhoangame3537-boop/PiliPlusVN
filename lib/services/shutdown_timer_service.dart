@@ -1,7 +1,6 @@
 // 定时关闭服务
 
 import 'dart:async' show Timer;
-
 import 'package:PiliPlus/models/common/enum_with_label.dart';
 import 'package:PiliPlus/pages/video/introduction/ugc/widgets/menu_row.dart';
 import 'package:PiliPlus/plugin/pl_player/controller.dart';
@@ -15,6 +14,7 @@ import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:material_ui/material_ui.dart';
+
 
 const _kSqueeze = 1.25;
 const _kItemExtent = 38.0;

@@ -1,5 +1,4 @@
 import 'dart:io' show Platform;
-
 import 'package:PiliPlus/common/widgets/custom_icon.dart';
 import 'package:PiliPlus/common/widgets/image_grid/image_grid_view.dart';
 import 'package:PiliPlus/models/common/audio_normalization.dart';
@@ -27,6 +26,7 @@ import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:material_ui/material_ui.dart';
+
 
 List<SettingsModel> get playSettings => [
   NormalModel(
@@ -291,6 +291,12 @@ List<SettingsModel> get playSettings => [
     leading: Icon(Icons.keyboard_alt_outlined),
     setKey: SettingBoxKey.keyboardControl,
     defaultVal: true,
+  ),
+  const SwitchModel(
+    title: 'Tự động đeo huy hiệu fan của phòng live',
+    leading: Icon(MdiIcons.medalOutline),
+    setKey: SettingBoxKey.autoWearMedal,
+    defaultVal: false,
   ),
   PopupModel(
     title: 'Kiểu hiển thị SuperChat (tin nhắn nổi bật)',

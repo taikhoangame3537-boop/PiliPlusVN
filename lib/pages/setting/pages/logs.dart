@@ -1,6 +1,5 @@
 import 'dart:async' show Timer;
 import 'dart:convert' show jsonDecode;
-
 import 'package:PiliPlus/common/constants.dart';
 import 'package:PiliPlus/common/widgets/button/icon_button.dart';
 import 'package:PiliPlus/common/widgets/loading_widget/loading_widget.dart';
@@ -16,6 +15,7 @@ import 'package:catcher_2/catcher_2.dart';
 import 'package:catcher_2/utils/log_printer.dart';
 import 'package:flutter/foundation.dart';
 import 'package:material_ui/material_ui.dart';
+
 
 const _snackBarDisplayDuration = Duration(seconds: 1);
 

@@ -2,7 +2,6 @@ import 'dart:async' show Timer;
 import 'dart:convert' show utf8;
 import 'dart:io' show Platform;
 import 'dart:typed_data' show Uint8List;
-
 import 'package:PiliPlus/common/widgets/button/icon_button.dart';
 import 'package:PiliPlus/common/widgets/custom_icon.dart';
 import 'package:PiliPlus/common/widgets/dialog/report.dart';
@@ -67,6 +66,7 @@ import 'package:intl/intl.dart' show DateFormat;
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:material_ui/material_ui.dart' hide showBottomSheet;
 import 'package:media_kit/media_kit.dart' show NativePlayer;
+
 
 mixin TimeBatteryMixin<T extends StatefulWidget> on State<T> {
   PlPlayerController get plPlayerController;

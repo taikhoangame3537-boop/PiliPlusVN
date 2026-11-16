@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:PiliPlus/common/widgets/avatars.dart';
 import 'package:PiliPlus/common/widgets/badge.dart';
 import 'package:PiliPlus/common/widgets/dialog/report.dart';
@@ -20,6 +19,7 @@ import 'package:PiliPlus/utils/platform_utils.dart';
 import 'package:collection/collection.dart';
 import 'package:get/get.dart';
 import 'package:material_ui/material_ui.dart';
+
 
 class VotePanel extends StatefulWidget {
   final VoteInfo voteInfo;

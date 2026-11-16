@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:PiliPlus/common/widgets/dialog/dialog.dart';
 import 'package:PiliPlus/models_new/download/download_info.dart';
 import 'package:PiliPlus/pages/common/multi_select/base.dart'
@@ -10,6 +9,7 @@ import 'package:collection/collection.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 import 'package:material_ui/material_ui.dart' show Text;
+
 
 class DownloadController extends GetxController
     with BaseMultiSelectMixin<DownloadSeasonInfo> {

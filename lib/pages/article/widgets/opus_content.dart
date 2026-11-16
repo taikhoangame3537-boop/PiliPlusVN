@@ -1,5 +1,4 @@
 import 'dart:math' as math;
-
 import 'package:PiliPlus/common/assets.dart';
 import 'package:PiliPlus/common/widgets/badge.dart';
 import 'package:PiliPlus/common/widgets/emote_tooltip.dart';
@@ -13,7 +12,7 @@ import 'package:PiliPlus/models/common/image_preview_type.dart';
 import 'package:PiliPlus/models/dynamics/article_content_model.dart'
     show ArticleContentModel, Rich, Style, Word, Node;
 import 'package:PiliPlus/models/dynamics/result.dart';
-import 'package:PiliPlus/pages/article/widgets/sliver_list_ext.dart';
+import 'package:PiliPlus/common/widgets/sliver/sliver_reverse.dart';
 import 'package:PiliPlus/pages/dynamics/widgets/vote.dart';
 import 'package:PiliPlus/utils/app_scheme.dart';
 import 'package:PiliPlus/utils/extension/num_ext.dart';
@@ -34,6 +33,7 @@ import 'package:re_highlight/languages/all.dart';
 import 'package:re_highlight/re_highlight.dart';
 import 'package:re_highlight/styles/github-dark.dart';
 import 'package:re_highlight/styles/github.dart';
+
 
 class OpusContent extends StatelessWidget {
   final List<ArticleContentModel> opus;
@@ -297,7 +297,7 @@ class OpusContent extends StatelessWidget {
 
     late final highlight = Highlight()..registerLanguages(builtinAllLanguages);
 
-    return SliverListExt.separated(
+    return SliverListReverse.separated(
       reverse: reverse,
       itemCount: opus.length,
       itemBuilder: (context, index) {

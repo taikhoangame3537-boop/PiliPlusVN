@@ -1,13 +1,11 @@
 import 'dart:io';
 import 'dart:typed_data';
-
 import 'package:PiliPlus/common/widgets/button/icon_button.dart';
 import 'package:PiliPlus/common/widgets/scaffold/simple_scaffold.dart';
 import 'package:PiliPlus/utils/extension/box_ext.dart';
 import 'package:PiliPlus/utils/extension/get_ext.dart';
 import 'package:PiliPlus/utils/extension/num_ext.dart';
 import 'package:PiliPlus/utils/extension/scroll_controller_ext.dart';
-import 'package:PiliPlus/utils/extension/size_ext.dart';
 import 'package:PiliPlus/utils/font_utils.dart';
 import 'package:PiliPlus/utils/storage.dart';
 import 'package:PiliPlus/utils/storage_key.dart';
@@ -15,6 +13,7 @@ import 'package:PiliPlus/utils/storage_pref.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 import 'package:material_ui/material_ui.dart';
+
 
 class FontSettingPage extends StatefulWidget {
   const FontSettingPage({super.key});
@@ -64,7 +63,7 @@ class _FontSettingPageState extends State<FontSettingPage> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     colorScheme = ColorScheme.of(context);
-    isPortrait = MediaQuery.sizeOf(context).isPortrait;
+    isPortrait = MediaQuery.isPortraitOf(context);
     scrollController = PrimaryScrollController.of(context);
   }
 

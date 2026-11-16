@@ -1,5 +1,4 @@
 import 'dart:math' show max;
-
 import 'package:PiliPlus/common/style.dart';
 import 'package:PiliPlus/common/widgets/button/icon_button.dart';
 import 'package:PiliPlus/common/widgets/button/toolbar_icon_button.dart';
@@ -28,7 +27,6 @@ import 'package:PiliPlus/pages/emote/controller.dart';
 import 'package:PiliPlus/pages/emote/view.dart';
 import 'package:PiliPlus/utils/accounts.dart';
 import 'package:PiliPlus/utils/date_utils.dart';
-import 'package:PiliPlus/utils/extension/context_ext.dart';
 import 'package:PiliPlus/utils/grid.dart';
 import 'package:PiliPlus/utils/request_utils.dart';
 import 'package:collection/collection.dart';
@@ -36,6 +34,7 @@ import 'package:flutter/services.dart' show LengthLimitingTextInputFormatter;
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 import 'package:material_ui/material_ui.dart' hide showTimePicker;
+
 
 class CreateDynPanel extends CommonRichTextPubPage {
   const CreateDynPanel({
@@ -583,7 +582,7 @@ class _CreateDynPanelState extends CommonRichTextPubPageState<CreateDynPanel> {
 
   @override
   Widget buildMorePanel() {
-    double height = context.isTablet ? 300 : 170;
+    double height = MediaQuery.isTabletOf(context) ? 300 : 170;
     final keyboardHeight = controller.keyboardHeight;
     if (keyboardHeight != 0) {
       height = max(height, keyboardHeight);

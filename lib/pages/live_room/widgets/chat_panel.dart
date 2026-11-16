@@ -349,7 +349,7 @@ class LiveRoomChatPanel extends StatelessWidget {
           onTap: () => Get.toNamed('/member?mid=${item.extra.mid}'),
           child: const Text('Đến trang cá nhân của họ', style: TextStyle(fontSize: 13)),
         ),
-        if (liveRoomController.isLogin) ...[
+        if (liveRoomController.isMainLogin) ...[
           PopupMenuItem(
             height: 38,
             onTap: () => liveRoomController.onAtUser(item),

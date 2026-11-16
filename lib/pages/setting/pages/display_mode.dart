@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:PiliPlus/common/widgets/scaffold/simple_scaffold.dart';
 import 'package:PiliPlus/utils/storage.dart';
 import 'package:PiliPlus/utils/storage_key.dart';
@@ -9,6 +8,7 @@ import 'package:flutter/services.dart' show PlatformException;
 import 'package:flutter_displaymode/flutter_displaymode.dart';
 import 'package:hive_ce/hive.dart';
 import 'package:material_ui/material_ui.dart';
+
 
 class SetDisplayMode extends StatefulWidget {
   const SetDisplayMode({super.key});
