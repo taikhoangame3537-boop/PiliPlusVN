@@ -1,4 +1,5 @@
 import 'dart:math';
+
 import 'package:PiliPlus/common/assets.dart';
 import 'package:PiliPlus/common/constants.dart';
 import 'package:PiliPlus/common/style.dart';
@@ -59,9 +60,8 @@ import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:protobuf/protobuf.dart';
+
 part 'package:PiliPlus/common/widgets/context_menu/reply_menu_helper.dart';
-
-
 
 const _replyTextButtonStyle = ButtonStyle(
   visualDensity: VisualDensity.compact,

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io' show exit, Platform;
 import 'dart:math' as math;
+
 import 'package:PiliPlus/pages/common/common_intro_controller.dart';
 import 'package:PiliPlus/pages/video/introduction/ugc/controller.dart';
 import 'package:PiliPlus/plugin/pl_player/controller.dart';
@@ -12,7 +13,6 @@ import 'package:flutter/services.dart'
     show KeyDownEvent, KeyUpEvent, LogicalKeyboardKey, HardwareKeyboard;
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:material_ui/material_ui.dart';
-
 
 class PlayerFocus extends StatelessWidget {
   const PlayerFocus({

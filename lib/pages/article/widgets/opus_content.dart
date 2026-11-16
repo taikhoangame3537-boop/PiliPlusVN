@@ -1,4 +1,5 @@
 import 'dart:math' as math;
+
 import 'package:PiliPlus/common/assets.dart';
 import 'package:PiliPlus/common/widgets/badge.dart';
 import 'package:PiliPlus/common/widgets/emote_tooltip.dart';
@@ -33,7 +34,6 @@ import 'package:re_highlight/languages/all.dart';
 import 'package:re_highlight/re_highlight.dart';
 import 'package:re_highlight/styles/github-dark.dart';
 import 'package:re_highlight/styles/github.dart';
-
 
 class OpusContent extends StatelessWidget {
   final List<ArticleContentModel> opus;

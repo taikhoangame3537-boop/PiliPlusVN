@@ -1,11 +1,11 @@
 import 'dart:async';
+
 import 'package:PiliPlus/common/widgets/flutter/refresh_indicator.dart';
 import 'package:PiliPlus/http/loading_state.dart';
 import 'package:PiliPlus/utils/extension/scroll_controller_ext.dart';
 import 'package:easy_debounce/easy_throttle.dart';
 import 'package:flutter/widgets.dart' show ScrollController, GlobalKey;
 import 'package:get/get.dart';
-
 
 mixin RefreshImplMixin on ScrollOrRefreshMixin {
   @override

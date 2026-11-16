@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io' show Platform;
+
 import 'package:PiliPlus/common/widgets/route_aware_mixin.dart'
     show routeObserver;
 import 'package:PiliPlus/common/widgets/selection_text.dart';
@@ -24,7 +25,6 @@ import 'package:material_ui/material_ui.dart';
 import 'package:webview_all_linux/webview_all_linux.dart';
 import 'package:webview_platform_interface/webview_platform_interface.dart'
     hide WebResourceResponse;
-
 
 final _prefixRegex = RegExp(r'^(?!(https?://))\S+://', caseSensitive: false);
 

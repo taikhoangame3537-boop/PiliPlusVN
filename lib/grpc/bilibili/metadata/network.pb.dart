@@ -11,15 +11,15 @@
 // ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
+
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
+
 import 'network.pbenum.dart';
+
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
+
 export 'network.pbenum.dart';
-
-
-
-
 
 class NetQuality extends $pb.GeneratedMessage {
   factory NetQuality({

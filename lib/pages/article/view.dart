@@ -1,4 +1,5 @@
 import 'dart:math';
+
 import 'package:PiliPlus/common/style.dart';
 import 'package:PiliPlus/common/widgets/badge.dart';
 import 'package:PiliPlus/common/widgets/flutter/refresh_indicator.dart';
@@ -40,7 +41,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:html/parser.dart' as parser;
 import 'package:material_ui/material_ui.dart';
-
 
 class ArticlePage extends StatefulWidget {
   const ArticlePage({super.key});

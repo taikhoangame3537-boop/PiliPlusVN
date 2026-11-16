@@ -1,4 +1,5 @@
 import 'dart:math';
+
 import 'package:flutter/foundation.dart'
     show
         ObjectFlagProperty,
@@ -17,7 +18,6 @@ import 'package:flutter/services.dart'
         PointerEnterEventListener,
         PointerExitEventListener;
 import 'package:material_ui/material_ui.dart';
-
 
 typedef PointerEventListener = void Function(double dx, int seconds);
 

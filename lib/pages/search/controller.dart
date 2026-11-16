@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:PiliPlus/common/widgets/dialog/dialog.dart';
 import 'package:PiliPlus/http/loading_state.dart';
 import 'package:PiliPlus/http/search.dart';
@@ -14,7 +15,6 @@ import 'package:PiliPlus/utils/storage_pref.dart';
 import 'package:get/get.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:stream_transform/stream_transform.dart';
-
 
 mixin DebounceStreamMixin<T> {
   final Duration duration = const Duration(milliseconds: 200);

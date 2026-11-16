@@ -1,5 +1,6 @@
 import 'dart:async' show Timer;
 import 'dart:io' show Platform;
+
 import 'package:PiliPlus/plugin/pl_player/controller.dart';
 import 'package:PiliPlus/utils/desktop/tray_controller.dart';
 import 'package:PiliPlus/utils/device_utils.dart';
@@ -8,7 +9,6 @@ import 'package:PiliPlus/utils/storage_key.dart';
 import 'package:PiliPlus/utils/storage_pref.dart';
 import 'package:nativeapi/nativeapi.dart' as nativeapi;
 import 'package:window_manager/window_manager.dart';
-
 
 class WindowController {
   WindowController._();

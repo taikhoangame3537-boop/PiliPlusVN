@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:math' as math;
 import 'dart:ui' as ui;
+
 import 'package:PiliPlus/common/assets.dart';
 import 'package:PiliPlus/common/constants.dart';
 import 'package:PiliPlus/common/style.dart';
@@ -81,12 +82,11 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'package:material_ui/material_ui.dart';
 import 'package:media_kit_video/media_kit_video.dart';
 import 'package:screen_brightness_platform_interface/screen_brightness_platform_interface.dart';
+
 part 'widgets.dart';
 import 'package:PiliPlus/pages/video/widgets/translate_rules_dialog.dart';
 import 'package:PiliPlus/pages/video/widgets/translate_api_dialog.dart';
 import 'package:PiliPlus/utils/storage_pref.dart';
-
-
 
 class PLVideoPlayer extends StatefulWidget {
   const PLVideoPlayer({

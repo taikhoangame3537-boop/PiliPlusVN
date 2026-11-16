@@ -11,19 +11,19 @@
 // ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
+
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
+
 import '../archive/middleware/v1.pb.dart' as $3;
 import '../archive/v1.pb.dart' as $1;
 import '../card/v1.pb.dart' as $2;
 import '../dynamic/v2.pb.dart' as $4;
 import 'v1.pbenum.dart';
+
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
+
 export 'v1.pbenum.dart';
-
-
-
-
 
 class Arc extends $pb.GeneratedMessage {
   factory Arc({

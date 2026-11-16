@@ -11,17 +11,17 @@
 // ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
+
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
+
 import '../../account/service/v1.pb.dart' as $1;
 import '../../dagw/component/avatar/v1.pb.dart' as $0;
 import 'v1.pbenum.dart';
+
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
+
 export 'v1.pbenum.dart';
-
-
-
-
 
 class AirDropShareUserInfo extends $pb.GeneratedMessage {
   factory AirDropShareUserInfo({

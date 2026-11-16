@@ -1,7 +1,7 @@
 import 'dart:ui' show Color;
+
 import 'package:canvas_danmaku/models/danmaku_content_item.dart'
     show DanmakuItemType;
-
 
 abstract final class DmUtils {
   static Color decimalToColor(int decimalColor) =>

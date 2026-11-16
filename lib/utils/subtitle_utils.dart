@@ -1,4 +1,5 @@
 import 'dart:typed_data' show Uint8List;
+
 import 'package:PiliPlus/common/constants.dart';
 import 'package:PiliPlus/http/init.dart';
 import 'package:PiliPlus/models/common/enum_with_label.dart';
@@ -7,7 +8,6 @@ import 'package:PiliPlus/utils/extension/string_ext.dart';
 import 'package:PiliPlus/utils/path_utils.dart';
 import 'package:collection/collection.dart' show IterableExtension;
 import 'package:dio/dio.dart' show Options;
-
 
 enum SubtitleFormat implements EnumWithLabel {
   json('JSON'),

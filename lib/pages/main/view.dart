@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import 'package:PiliPlus/common/style.dart';
 import 'package:PiliPlus/common/widgets/floating_navigation_bar.dart';
 import 'package:PiliPlus/common/widgets/flutter/pop_scope.dart';
@@ -20,7 +21,6 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:nativeapi/nativeapi.dart' as nativeapi;
-
 
 class MainApp extends StatefulWidget {
   const MainApp({super.key});

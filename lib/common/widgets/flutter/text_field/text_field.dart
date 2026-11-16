@@ -12,6 +12,7 @@
 library;
 
 import 'dart:ui' as ui show BoxHeightStyle, BoxWidthStyle;
+
 import 'package:PiliPlus/common/widgets/flutter/text_field/controller.dart';
 import 'package:PiliPlus/common/widgets/flutter/text_field/cupertino/spell_check_suggestions_toolbar.dart';
 import 'package:PiliPlus/common/widgets/flutter/text_field/cupertino/text_field.dart';
@@ -47,7 +48,6 @@ import 'package:material_ui/material_ui.dart'
         TextSelectionGestureDetectorBuilder,
         TextSelectionOverlay,
         TextSelectionGestureDetectorBuilderDelegate;
-
 
 class _TextFieldSelectionGestureDetectorBuilder
     extends TextSelectionGestureDetectorBuilder {

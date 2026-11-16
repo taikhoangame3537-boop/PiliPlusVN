@@ -1,7 +1,7 @@
 // mpv --hwdec=help
 import 'dart:io' show Platform;
-import 'package:flutter/foundation.dart' show kDebugMode;
 
+import 'package:flutter/foundation.dart' show kDebugMode;
 
 enum HwDecType {
   no('no', 'Bật giải mã phần mềm'),

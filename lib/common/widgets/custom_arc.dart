@@ -1,6 +1,6 @@
 import 'dart:math' show pi;
-import 'package:flutter/widgets.dart';
 
+import 'package:flutter/widgets.dart';
 
 class Arc extends LeafRenderObjectWidget {
   const Arc({

@@ -1,6 +1,6 @@
 import 'dart:io' show Platform;
-import 'package:jnigen/jnigen.dart';
 
+import 'package:jnigen/jnigen.dart';
 
 void main(List<String> args) async {
   final packageRoot = Platform.script.resolve('../');

@@ -11,11 +11,11 @@
 // ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
+
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
+
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
-
-
 
 class FanNumColorFormat extends $pb.GeneratedMessage {
   factory FanNumColorFormat({

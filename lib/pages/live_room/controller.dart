@@ -2,6 +2,7 @@ import 'dart:async' show Timer, StreamSubscription;
 import 'dart:convert' show jsonDecode;
 import 'dart:io' show Platform;
 import 'dart:math' as math;
+
 import 'package:PiliPlus/common/widgets/dialog/report.dart';
 import 'package:PiliPlus/common/widgets/flutter/text_field/controller.dart';
 import 'package:PiliPlus/http/constants.dart';
@@ -57,6 +58,7 @@ import 'package:flutter/foundation.dart' show kDebugMode, kReleaseMode;
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 import 'package:material_ui/material_ui.dart';
+
 part 'package:PiliPlus/pages/live_room/controller_mixin/block.dart';
 part 'package:PiliPlus/pages/live_room/controller_mixin/data.dart';
 part 'package:PiliPlus/pages/live_room/controller_mixin/dm.dart';
@@ -68,7 +70,6 @@ part 'package:PiliPlus/pages/live_room/controller_mixin/sc.dart';
 part 'package:PiliPlus/pages/live_room/controller_mixin/size.dart';
 part 'package:PiliPlus/pages/live_room/controller_mixin/time.dart';
 part 'package:PiliPlus/pages/live_room/controller_mixin/trace.dart';
-
 
 const int _kMaxChatCount = 500;
 const int _kTrimCount = _kMaxChatCount + 50;

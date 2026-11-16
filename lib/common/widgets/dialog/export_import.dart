@@ -2,6 +2,7 @@ import 'dart:async' show FutureOr;
 import 'dart:convert' show utf8, jsonDecode;
 import 'dart:io';
 import 'dart:typed_data' show Uint8List;
+
 import 'package:PiliPlus/common/style.dart';
 import 'package:PiliPlus/common/widgets/dialog/simple_dialog_option.dart';
 import 'package:PiliPlus/utils/config_archive.dart';
@@ -22,7 +23,6 @@ import 'package:re_highlight/languages/json.dart';
 import 'package:re_highlight/re_highlight.dart';
 import 'package:re_highlight/styles/base16/github.dart';
 import 'package:re_highlight/styles/github-dark.dart';
-
 
 void exportToClipBoard({
   required ValueGetter<String> onExport,

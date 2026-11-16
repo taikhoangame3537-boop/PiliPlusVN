@@ -1,9 +1,9 @@
 import 'dart:io' show Platform;
 import 'dart:math' as math;
+
 import 'package:PiliPlus/models/video/play/url.dart' show Volume;
 import 'package:PiliPlus/utils/storage_pref.dart';
 import 'package:media_kit/media_kit.dart' show Player;
-
 
 enum AudioNormalization {
   disable('Vô hiệu hóa'),

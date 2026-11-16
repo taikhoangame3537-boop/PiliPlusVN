@@ -1,10 +1,10 @@
 import 'dart:async' show scheduleMicrotask;
 import 'dart:collection' show Queue;
 import 'dart:ui' show PointerDataPacket;
+
 import 'package:flutter/gestures.dart' show PointerEventConverter;
 import 'package:flutter/rendering.dart' show RenderView, ViewConfiguration;
 import 'package:flutter/widgets.dart';
-
 
 /// ref https://github.com/LastMonopoly/scaled_app
 

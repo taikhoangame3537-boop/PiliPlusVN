@@ -1,4 +1,5 @@
 import 'dart:math';
+
 import 'package:PiliPlus/common/skeleton/msg_feed_top.dart';
 import 'package:PiliPlus/common/sliver_single_child_delegate.dart';
 import 'package:PiliPlus/common/widgets/button/more_btn.dart';
@@ -14,7 +15,6 @@ import 'package:PiliPlus/pages/share/view.dart' show UserModel;
 import 'package:PiliPlus/utils/utils.dart';
 import 'package:get/get.dart';
 import 'package:material_ui/material_ui.dart';
-
 
 class FollowChildPage extends StatefulWidget {
   const FollowChildPage({

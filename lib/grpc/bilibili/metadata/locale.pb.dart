@@ -11,10 +11,10 @@
 // ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
+
 import 'package:protobuf/protobuf.dart' as $pb;
+
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
-
-
 
 class Locale extends $pb.GeneratedMessage {
   factory Locale({

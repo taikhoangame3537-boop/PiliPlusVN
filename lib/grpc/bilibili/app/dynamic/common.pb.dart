@@ -11,14 +11,14 @@
 // ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
+
 import 'package:protobuf/protobuf.dart' as $pb;
+
 import 'common.pbenum.dart';
+
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
+
 export 'common.pbenum.dart';
-
-
-
-
 
 class ItemWHRatio extends $pb.GeneratedMessage {
   factory ItemWHRatio({

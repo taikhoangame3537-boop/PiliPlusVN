@@ -1,5 +1,6 @@
 import 'dart:io' show Platform;
 import 'dart:math';
+
 import 'package:PiliPlus/common/assets.dart';
 import 'package:PiliPlus/common/style.dart';
 import 'package:PiliPlus/common/widgets/custom_icon.dart';
@@ -75,7 +76,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:screen_brightness_platform_interface/screen_brightness_platform_interface.dart';
-
 
 class VideoDetailPageV extends StatefulWidget {
   const VideoDetailPageV({super.key});

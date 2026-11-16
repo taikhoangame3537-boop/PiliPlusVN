@@ -9,6 +9,7 @@
 library;
 
 import 'dart:math' as math;
+
 import 'package:PiliPlus/common/widgets/flutter/text_field/controller.dart';
 import 'package:PiliPlus/common/widgets/flutter/text_field/editable.dart';
 import 'package:PiliPlus/common/widgets/flutter/text_field/editable_text.dart';
@@ -22,7 +23,6 @@ import 'package:material_ui/material_ui.dart'
         EditableTextState,
         TextSelectionOverlay,
         TextSelectionGestureDetectorBuilder;
-
 
 /// Delegate interface for the [TextSelectionGestureDetectorBuilder].
 ///

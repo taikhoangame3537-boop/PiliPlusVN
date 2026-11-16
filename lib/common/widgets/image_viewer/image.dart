@@ -4,6 +4,7 @@
 
 import 'dart:io' show File;
 import 'dart:math' as math;
+
 import 'package:PiliPlus/common/style.dart';
 import 'package:PiliPlus/common/widgets/gesture/image_horizontal_drag_gesture_recognizer.dart';
 import 'package:PiliPlus/common/widgets/image_viewer/viewer.dart';
@@ -12,7 +13,6 @@ import 'package:flutter/gestures.dart' show DoubleTapGestureRecognizer;
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/semantics.dart';
 import 'package:material_ui/material_ui.dart';
-
 
 class Image extends StatefulWidget {
   const Image({

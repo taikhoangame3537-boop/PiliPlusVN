@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:PiliPlus/common/widgets/dialog/dialog.dart';
 import 'package:PiliPlus/common/widgets/dialog/report_member.dart';
 import 'package:PiliPlus/grpc/bilibili/app/im/v1.pb.dart';
@@ -13,7 +14,6 @@ import 'package:PiliPlus/utils/accounts.dart';
 import 'package:fixnum/fixnum.dart';
 import 'package:flutter/widgets.dart' show Text;
 import 'package:get/get.dart';
-
 
 class WhisperLinkSettingController extends GetxController {
   WhisperLinkSettingController({

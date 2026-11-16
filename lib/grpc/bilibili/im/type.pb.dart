@@ -11,17 +11,17 @@
 // ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
+
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
+
 import '../account/service/v1.pb.dart' as $0;
 import '../app/dynamic/v2.pb.dart' as $1;
 import '../dagw/component/avatar/v1.pb.dart' as $2;
+
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
+
 export 'type.pbenum.dart';
-
-
-
-
 
 class AILogo extends $pb.GeneratedMessage {
   factory AILogo({

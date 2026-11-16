@@ -3,6 +3,7 @@ import 'dart:convert' show utf8, jsonDecode;
 import 'dart:io' show Platform, File;
 import 'dart:math' show min;
 import 'dart:ui';
+
 import 'package:PiliPlus/common/style.dart';
 import 'package:PiliPlus/common/widgets/pair.dart';
 import 'package:PiliPlus/common/widgets/progress_bar/segment_progress_bar.dart';
@@ -77,7 +78,6 @@ import 'package:hive_ce/hive.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:media_kit/media_kit.dart' hide Subtitle;
 import 'package:PiliPlus/utils/subtitle_translator.dart';
-
 
 typedef SubtitleData = ({bool isData, String id});
 

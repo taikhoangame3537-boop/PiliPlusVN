@@ -1,4 +1,5 @@
 import 'dart:math' show max;
+
 import 'package:PiliPlus/common/style.dart';
 import 'package:PiliPlus/common/widgets/button/icon_button.dart';
 import 'package:PiliPlus/common/widgets/button/toolbar_icon_button.dart';
@@ -34,7 +35,6 @@ import 'package:flutter/services.dart' show LengthLimitingTextInputFormatter;
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 import 'package:material_ui/material_ui.dart' hide showTimePicker;
-
 
 class CreateDynPanel extends CommonRichTextPubPage {
   const CreateDynPanel({

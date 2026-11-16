@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'dart:io' show Platform;
+
 import 'package:PiliPlus/utils/desktop/window_controller.dart';
 import 'package:PiliPlus/utils/device_utils.dart';
 import 'package:flutter/services.dart'
     show SystemChrome, SystemUiOverlay, DeviceOrientation;
-
 
 bool _isDesktopFullScreen = false;
 

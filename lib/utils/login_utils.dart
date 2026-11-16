@@ -1,5 +1,6 @@
 import 'dart:async' show FutureOr;
 import 'dart:io' show Platform;
+
 import 'package:PiliPlus/http/loading_state.dart';
 import 'package:PiliPlus/http/user.dart';
 import 'package:PiliPlus/main.dart' show webViewEnvironment;
@@ -16,7 +17,6 @@ import 'package:crypto/crypto.dart' show Digest;
 import 'package:flutter_inappwebview/flutter_inappwebview.dart' as web;
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
-
 
 abstract final class LoginUtils {
   static FutureOr setWebCookie([Account? account]) {

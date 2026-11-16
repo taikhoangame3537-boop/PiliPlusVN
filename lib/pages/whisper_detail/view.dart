@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io' show File;
+
 import 'package:PiliPlus/common/assets.dart';
 import 'package:PiliPlus/common/widgets/dialog/report.dart';
 import 'package:PiliPlus/common/widgets/flutter/chat_list_view.dart';
@@ -29,7 +30,6 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:material_ui/material_ui.dart' hide TextField;
 import 'package:mime/mime.dart';
-
 
 const _kMaxExtent = 625.0;
 const _kConstraints = BoxConstraints(maxWidth: _kMaxExtent);

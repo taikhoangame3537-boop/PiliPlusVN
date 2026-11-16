@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'package:PiliPlus/common/constants.dart';
 import 'package:PiliPlus/http/api.dart';
 import 'package:PiliPlus/http/init.dart';
@@ -13,7 +14,6 @@ import 'package:PiliPlus/utils/utils.dart';
 import 'package:crypto/crypto.dart';
 import 'package:dio/dio.dart';
 import 'package:encrypt/encrypt.dart';
-
 
 abstract final class LoginHttp {
   static final String deviceId = LoginUtils.genDeviceId();

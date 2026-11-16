@@ -16,6 +16,7 @@
  */
 
 import 'dart:math' as math;
+
 import 'package:PiliPlus/common/widgets/custom_height_widget.dart';
 import 'package:PiliPlus/common/widgets/dynamic_sliver_app_bar/rendering/sliver_persistent_header.dart';
 import 'package:PiliPlus/common/widgets/dynamic_sliver_app_bar/sliver_persistent_header.dart';
@@ -26,7 +27,6 @@ import 'package:flutter/rendering.dart' show RenderOpacity, OpacityLayer;
 import 'package:flutter/services.dart';
 import 'package:material_ui/material_ui.dart'
     hide SliverPersistentHeader, SliverPersistentHeaderDelegate;
-
 
 /// ref [SliverAppBar]
 class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {

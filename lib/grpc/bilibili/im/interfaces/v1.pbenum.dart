@@ -11,8 +11,8 @@
 // ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
-import 'package:protobuf/protobuf.dart' as $pb;
 
+import 'package:protobuf/protobuf.dart' as $pb;
 
 class MSG_LIKE_ACTION extends $pb.ProtobufEnum {
   static const MSG_LIKE_ACTION ACTION_UNSPECIFIED =

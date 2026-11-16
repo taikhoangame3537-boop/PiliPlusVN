@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'dart:io';
+
 import 'package:flutter/foundation.dart';
 import 'package:permission_handler_platform_interface/permission_handler_platform_interface.dart';
+
 export 'package:permission_handler_platform_interface/permission_handler_platform_interface.dart'
     show
         Permission,
@@ -12,8 +14,6 @@ export 'package:permission_handler_platform_interface/permission_handler_platfor
         ServiceStatus,
         ServiceStatusGetters,
         FutureServiceStatusGetters;
-
-
 
 PermissionHandlerPlatform get _handler => PermissionHandlerPlatform.instance;
 

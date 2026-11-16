@@ -11,20 +11,20 @@
 // ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
+
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 import 'package:protobuf/well_known_types/google/protobuf/any.pb.dart' as $0;
+
 import '../../account/service/v1.pb.dart' as $2;
 import '../../dagw/component/avatar/v1.pb.dart' as $1;
 import '../../pagination.pb.dart' as $3;
 import '../../playershared.pbenum.dart' as $4;
 import 'common.pbenum.dart';
+
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
+
 export 'common.pbenum.dart';
-
-
-
-
 
 class ActBannerItem extends $pb.GeneratedMessage {
   factory ActBannerItem({

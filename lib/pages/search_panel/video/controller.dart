@@ -1,4 +1,5 @@
 import 'dart:math';
+
 import 'package:PiliPlus/http/loading_state.dart';
 import 'package:PiliPlus/models/common/search/video_search_type.dart';
 import 'package:PiliPlus/models/search/result.dart';
@@ -10,7 +11,6 @@ import 'package:PiliPlus/utils/id_utils.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 import 'package:material_ui/material_ui.dart';
-
 
 mixin SearchVideoMixin on SearchVideoController {
   late bool _hasJump2Video = false;

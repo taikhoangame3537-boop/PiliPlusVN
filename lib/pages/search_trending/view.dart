@@ -1,4 +1,5 @@
 import 'dart:math';
+
 import 'package:PiliPlus/common/assets.dart';
 import 'package:PiliPlus/common/widgets/flutter/list_tile.dart';
 import 'package:PiliPlus/common/widgets/flutter/refresh_indicator.dart';
@@ -17,7 +18,6 @@ import 'package:cached_network_image_ce/cached_network_image.dart';
 import 'package:flutter/services.dart' show SystemUiOverlayStyle;
 import 'package:get/get.dart';
 import 'package:material_ui/material_ui.dart' hide ListTile;
-
 
 class SearchTrendingPage extends StatefulWidget {
   const SearchTrendingPage({super.key});

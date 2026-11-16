@@ -1,5 +1,6 @@
 import 'dart:async' show StreamSubscription, Timer;
 import 'dart:math' as math;
+
 import 'package:PiliPlus/common/widgets/dialog/simple_dialog_option.dart';
 import 'package:PiliPlus/common/widgets/progress_bar/segment_progress_bar.dart';
 import 'package:PiliPlus/http/loading_state.dart';
@@ -17,7 +18,6 @@ import 'package:get/get.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:media_kit/media_kit.dart';
-
 
 mixin BlockConfigMixin {
   late final pgcSkipType = Pref.pgcSkipType;
