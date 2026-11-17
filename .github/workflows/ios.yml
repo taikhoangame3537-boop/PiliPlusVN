@@ -36,7 +36,13 @@ jobs:
 
       - name: Build iOS
         run: |
-          flutter build ios --release --no-codesign --dart-define-from-file=pili_release.json --no-pub
+          set -o pipefail
+          # -v để thấy lỗi thật của Xcode; nếu lỗi thì in riêng các dòng "error:" ở cuối log
+          if ! flutter build ios --release --no-codesign --dart-define-from-file=pili_release.json --no-pub -v 2>&1 | tee build_ios.log; then
+            echo "=============== CÁC DÒNG LỖI CỦA XCODE ==============="
+            grep -n -i -E "error:|requires a development team|Signing for|Command .* failed|failed with" build_ios.log | head -60
+            exit 1
+          fi
           ln -sf ./build/ios/iphoneos Payload
           # make AltSign happy...
           find Payload/Runner.app/Frameworks -type d -name "*.framework" -exec codesign --force --sign - --preserve-metadata=identifier,entitlements {} \;
